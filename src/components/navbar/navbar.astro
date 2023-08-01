@@ -25,6 +25,7 @@ const menuitems = [
   {
     title: "DCC-help",
     path: "/dcc-help",
+    sparkle: true,
   },
 ];
 ---
@@ -57,7 +58,8 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900"
+                      >
                       {item.title}
                     </a>
                   </li>
