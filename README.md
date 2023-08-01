@@ -1,6 +1,6 @@
 # Astroship - Astro Starter Template 🛸
 
-Astroship is a starter template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
+The Debugging C Compiler (DCC) is an educationally-focused C/C++ compiler which explains common novice compiler errors in simple terms. It also introduces a host of dynamic checks such as memory leak detection, run-time errors, and much more.
 
 This Free Template is sponsored by [Web3Templates](https://web3templates.com)
 

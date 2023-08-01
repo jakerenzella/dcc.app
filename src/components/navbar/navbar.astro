@@ -6,30 +6,25 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
-  },
-  {
-    title: "Pricing",
-    path: "/pricing",
-  },
-  {
     title: "About",
     path: "/about",
   },
   {
-    title: "Blog",
-    path: "/blog",
+    title: "Papers",
+    path: "/papers",
   },
   {
-    title: "Contact",
-    path: "/contact",
+    title: "Features",
+    path: "#",
+    children: [
+      { title: "Compile-time", path: "/" },
+      { title: "Run time", path: "#" },
+      { title: "Error Explanations", path: "#" },
+    ],
+  },
+  {
+    title: "DCC-help",
+    path: "/dcc-help",
   },
 ];
 ---
@@ -39,9 +34,7 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
-          >
+          ><span class="font-bold text-slate-800">DCC</span>
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
