@@ -7,38 +7,39 @@ const features = [
     title: "Extra compile-time checks",
     description:
       "DCC provides extra compile-time checks to help you catch bugs early, utilising GCC, Clang, AddressSan, and more.",
-    icon: "bx:bxs-briefcase",
+    icon: "bx:bxs-check-shield",
   },
   {
     title: "Run-time stack traces and errors",
     description:
-      "DCC utilises industry dynamic analysis tools such as Valgrind to support students in writing correct, safe C/C++ programs.",
-    icon: "bx:bxs-window-alt",
+      "DCC utilises industry dynamic analysis tools such as GDB and Valgrind to support students in writing correct, safe C/C++ programs.",
+    icon: "bx:bxs-error",
   },
   {
     title: "Help me, DCC, you're my only hope!",
     description:
       "Stuck at an error you just don't understand? DCC-help uses AI to help you understand the error and how to fix it.",
-    icon: "bx:bxs-data",
+    icon: "bx:bxs-brain",
   },
-  // {
-  //   title: "Broad Integration",
-  //   description:
-  //     "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-  //   icon: "bx:bxs-bot",
-  // },
-  // {
-  //   title: "SEO Enabled",
-  //   description:
-  //     "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-  //   icon: "bx:bxs-file-find",
-  // },
-  // {
-  //   title: "Community",
-  //   description:
-  //     "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-  //   icon: "bx:bxs-user",
-  // },
+  {
+    title: "Memory leak detection",
+    description:
+      "DCC utilises Valgrind to detect memory leaks in your program, and provides you with a report on how to fix them.",
+    icon: "bx:bxs-memory-card",
+  },
+  {
+    title: "Conforms to standard APIs",
+    description:
+      "DCC conforms to the same API as standard implementations, such as gcc or clang.",
+    icon: "bx:bxs-copy",
+  },
+  {
+    title: "Built on the LLVM toolchain",
+    description:
+      "DCC does not fork the LLVM, meaning that it is always up to date with the latest LLVM features.",
+    icon: "bx:bxs-brush",
+  },
+
 ];
 ---
 
@@ -47,7 +48,8 @@ const features = [
     Everything a student needs in a compiler
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    DCC comes batteries included. It is easy to use, maintains the same API as GCC/Clang, and is built on top of LLVM.
+    DCC comes batteries included. It is easy to use, maintains the same API as
+    GCC/Clang, and is built on top of LLVM.
   </p>
 </div>
 
