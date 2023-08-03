@@ -6,6 +6,7 @@ const papersCollection = defineCollection({
     draft: z.boolean(),
     authors: z.array(z.string()),
     title: z.string(),
+    booktitle: z.string(),
     year: z.string(),
     url: z.string(),
     doi: z.string(),
