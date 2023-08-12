@@ -25,35 +25,38 @@ const makeTitle = title
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+  <script
+    src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js"
+    defer></script>
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
-      title={makeTitle}
-      description="The Debugging C Compiler (DCC) - A novice-focused C compiler."
-      canonical={canonicalURL}
-      twitter={{
-        creator: "@jakerenzella",
-        site: "@jakerenzella",
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `The Debugging C Compiler (DCC) - A novice-friendly C/C++ compiler`,
-          image: openGraph.src,
-        },
-        image: {
-          alt: "DCC Homepage Screenshot",
-        },
-      }}
-    />
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+  <SEO
+    title={makeTitle}
+    description="The Debugging C Compiler (DCC) - A novice-focused C compiler."
+    canonical={canonicalURL}
+    twitter={{
+      creator: "@jakerenzella",
+      site: "@jakerenzella",
+      card: "summary_large_image",
+    }}
+    openGraph={{
+      basic: {
+        url: canonicalURL,
+        type: "website",
+        title: `The Debugging C Compiler (DCC) - A novice-friendly C/C++ compiler`,
+        image: openGraph.src,
+      },
+      image: {
+        alt: "DCC Homepage Screenshot",
+      },
+    }}
+  />
+
   <body>
     <Navbar />
     <slot />

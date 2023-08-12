@@ -1,0 +1,49 @@
+<div class="max-w-5xl mx-auto">
+  <terminal-window>
+    <terminal-line data="input">dcc program.c -o program</terminal-line>
+
+    <terminal-line></terminal-line>
+
+    <terminal-line data="input">./program</terminal-line>
+    <terminal-line>
+      program.c:11:37 runtime error - index 5 out of bounds for type 'int [5]'
+
+      <terminal-line>
+        dcc explanation: You are using an illegal array index: 5
+      </terminal-line>
+      <terminal-line
+        >&emsp; Valid indices for an array of size 5 are 0..4</terminal-line
+      >
+      <terminal-line
+        >&emsp; Make sure the size of your array is correct.</terminal-line
+      >
+      <terminal-line
+        >&emsp; Make sure your array indices are correct.</terminal-line
+      >
+      <terminal-line>
+        Execution stopped in main() in program.c at line 11:</terminal-line
+      >
+      <terminal-line>
+        program.c:11:37 runtime error - index 5 out of bounds for type 'int [5]'
+      </terminal-line>
+      <terminal-line>
+        dcc explanation:You are using an illegal array index: 5
+      </terminal-line>
+      <terminal-line>
+        Valid indices for an array of size 5 are 0..4
+      </terminal-line>
+      Make sure the size of your array is correct. <br />
+      Make sure your array indices are correct. <br />
+      <br />
+      Execution stopped in main() in program.c at line 11: <br />
+      <br />
+      int i = 0; <br />
+      while(i &lt; 5) &#123; <br />
+      printf(&quot;%d\n&quot;, data[i]); i++; &#125; --&gt;<br />
+      printf(&quot;Final value was: %d\n&quot;, data[i]); &#125;<br />
+      Values when execution stopped: data = &#123;1, 2, 3, 4, 5&#125; i = 5 data[i]
+      = &lt;uninitialized value&gt; Don't understand? Get AI-generated help by running:
+      dcc-help
+    </terminal-line>
+  </terminal-window>
+</div>

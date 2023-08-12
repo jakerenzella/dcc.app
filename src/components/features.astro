@@ -39,32 +39,35 @@ const features = [
       "DCC does not fork the LLVM, meaning that it is always up to date with the latest LLVM features.",
     icon: "bx:bxs-brush",
   },
-
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything a student needs in a compiler
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    DCC comes batteries included. It is easy to use, maintains the same API as
-    GCC/Clang, and is built on top of LLVM.
-  </p>
-</div>
+<div class="mt-8 md:mt-0">
+  <div my-16 py-16 mh-16>
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+      Everything a student needs in a compiler
+    </h2>
+    <p class="text-lg mt-4 text-slate-600">
+      DCC comes batteries included. It is easy to use, maintains the same API as
+      GCC/Clang, and is built on top of LLVM.
+    </p>
+  </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+    {
+      features.map((item) => (
+        <div class="flex gap-4 items-start">
+          <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+            <Icon class="text-white" name={item.icon} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+            <p class="text-slate-500 mt-2 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </div>
