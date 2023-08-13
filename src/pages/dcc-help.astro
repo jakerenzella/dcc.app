@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Runtime from "@components/runtime.astro";
+import DCCHelp from "@components/dcchelp.astro";
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">DCC Help</Fragment>
+      <Fragment slot="desc">
+        DCC Help brings the power of Generative AI to the compiler.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16"></div>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12">
+      <div class="mb-4">
+        <h2 class="font-bold text-2xl text-gray-800">
+          Empowering the world with Astro.
+        </h2>
+        <p class="text-md text-slate-500">
+          We're a multi-cultural team from around the world! We come from
+          diverse backgrounds, bringing different personalities, experiences and
+          skills to the job. This is what makes our team so special.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-bold text-2xl text-gray-800">
+          Empowering the world with Astro.
+        </h2>
+        <p class="text-md text-slate-500">
+          We're a multi-cultural team from around the world! We come from
+          diverse backgrounds, bringing different personalities, experiences and
+          skills to the job. This is what makes our team so special.
+        </p>
+      </div>
+    </div>
+    <DCCHelp />
+  </Container>
+</Layout>
