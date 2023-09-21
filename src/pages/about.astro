@@ -1,31 +1,43 @@
 ---
 import { getCollection } from "astro:content";
-import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-
+import unsw from "assets/unsw.png";
 ---
 
 <Layout title="About">
   <Container>
     <Sectionhead>
       <Fragment slot="title">About DCC</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">DCC and DCC Help are built by a small team in the School of Computer Science and Engineering at UNSW, Sydney.</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Empowering a foundations first approach to introductory programming.
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        C runs the world, especially when performance and efficiency are
+        essential. C powers many operating systems such as Windows (1.4 billion
+        active devices) and Android and iOS Kernels (5 billion active machines).
+        Many things we use in our daily lives are programmed in C, such as
+        coffee machines, microwaves, cars, and 3D movies. However, current
+        literature indicates that there is a decline in teaching C as the first
+        programming language, whereas it used to be the dominant language. In
+        the Group of Eight (Australia's 8 most research-intensive universities),
+        The University of New South Wales, Sydney is the only university still
+        teaching C as the introductory language.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        The Debugging C/C++ Compiler was created by Dr Andrew Taylor to support
+        introductory programming in C for students at the University of New
+        South Wales, Sydney. DCC, used over 5 million times, explains the C
+        programming language's most common errors and assists students in
+        catching bugs. As such, it allows UNSW to continue to use C in
+        introduction to programming courses.
       </p>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      
-    </div>
+    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12"></div> -->
   </Container>
 </Layout>
