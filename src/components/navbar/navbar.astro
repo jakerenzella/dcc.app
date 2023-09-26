@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import Container from "@components/container.astro";
-import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import sidekick from "../../assets/sidekick.png";
 import { Image } from "astro:assets";
+import Contactform from "@components/contactform.astro";
 
 const publishedPapers = await getCollection("papers", ({ data }) => {
   return !data.draft;
@@ -29,6 +29,10 @@ const menuitems = [
   {
     title: paperTitle,
     path: "/papers",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
   },
 
   // {
