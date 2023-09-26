@@ -4,6 +4,8 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import sidekick from "../../assets/sidekick.png";
+import { Image } from "astro:assets";
 
 const publishedPapers = await getCollection("papers", ({ data }) => {
   return !data.draft;
@@ -15,10 +17,15 @@ const menuitems = [
     title: "About",
     path: "/about",
   },
-  // {
-  //   title: "DCC Help",
-  //   path: "/dcc-help",
-  // },
+  {
+    title: "DCC Help",
+    path: "/dcc-help",
+  },
+  {
+    title: "DCC Sidekick",
+    img: sidekick,
+    path: "/dcc-sidekick",
+  },
   {
     title: paperTitle,
     path: "/papers",
@@ -66,11 +73,19 @@ const menuitems = [
                 )}
 
                 {!item.children && (
-                  <li>
+                  <li class="flex items-center">
                     <a
                       href={item.path}
                       class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
-                      {item.title}
+                      {item.img ? (
+                        <Image
+                          src={item.img}
+                          width={120}
+                          alt="DCC Sidekick logo"
+                        />
+                      ) : (
+                        item.title
+                      )}
                     </a>
                   </li>
                 )}

@@ -5,7 +5,7 @@ import Sectionhead from "@components/sectionhead.astro";
 import DCCHelp from "@components/dcchelp.astro";
 ---
 
-<Layout title="About">
+<Layout title="DCC Help">
   <Container>
     <Sectionhead>
       <Fragment slot="title">DCC Help</Fragment>
@@ -16,28 +16,41 @@ import DCCHelp from "@components/dcchelp.astro";
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16"></div>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12">
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12 mb-12">
       <div class="mb-4">
         <h2 class="font-bold text-2xl text-gray-800">
-          Empowering the world with Astro.
+          Context-Rich Explanations
         </h2>
         <p class="text-md text-slate-500">
-          We're a multi-cultural team from around the world! We come from
-          diverse backgrounds, bringing different personalities, experiences and
-          skills to the job. This is what makes our team so special.
+          DCC Help generates error explanations that go beyond the surface, with
+          access to the source code, compiler output and stack variables at time
+          of error.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-bold text-2xl text-gray-800">Always available</h2>
+        <p class="text-md text-slate-500">
+          No more struggling with error messages; explanations at your
+          fingertips when you need them!
+        </p>
+      </div>
+      <div>
+        <h2 class="font-bold text-2xl text-gray-800">Seamless Integration</h2>
+        <p class="text-md text-slate-500">
+          DCC Help seamlessly integrates with the DCC compiler, within the
+          command line environment
         </p>
       </div>
       <div>
         <h2 class="font-bold text-2xl text-gray-800">
-          Empowering the world with Astro.
+          Natural language error explanations
         </h2>
         <p class="text-md text-slate-500">
-          We're a multi-cultural team from around the world! We come from
-          diverse backgrounds, bringing different personalities, experiences and
-          skills to the job. This is what makes our team so special.
+          DCC Help breaks down cryptic compiler error messages into simple
+          explanations.
         </p>
       </div>
     </div>
-    <DCCHelp />
+    <!-- <DCCHelp /> -->
   </Container>
 </Layout>

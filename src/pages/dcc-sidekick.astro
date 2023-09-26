@@ -1,0 +1,41 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import sidekick from "../assets/sidekick.png";
+import { Image } from "astro:assets";
+---
+
+<Layout title="DCC Sidekick">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">
+        <Image class="ml-auto mr-auto" src={sidekick} alt="the DCC Sidekick logo" width={400} />
+      </Fragment>
+      <Fragment slot="desc">
+        DCC Sidekick, our newest addition to the DCC suite, allows the student
+        to carry on the conversation about each error explanation in a
+        beautifully designed web page.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12 mb-12">
+      <div class="mb-4">
+        <h2 class="font-bold text-2xl text-gray-800">Natural conversation</h2>
+        <p class="text-md text-slate-500">
+          DCC Sidekick is your friendly virtual companion, ready to engage in
+          meaningful conversations with you about error explanations. It's like
+          having a personal tutor at your side.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-bold text-2xl text-gray-800">Deeper Understanding</h2>
+        <p class="text-md text-slate-500">
+          We believe that the best way to learn is by asking questions. DCC
+          Sidekick encourages you to dig deeper into each error.
+        </p>
+      </div>
+    </div>
+    <!-- <DCCHelp /> -->
+  </Container>
+</Layout>
