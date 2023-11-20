@@ -8,13 +8,13 @@ import DCCHelp from "@components/dcchelp.astro";
 <Layout title="DCC Help">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">DCC Help</Fragment>
+      <Fragment slot="title">$dcc --help</Fragment>
       <Fragment slot="desc">
-        DCC Help brings the power of Generative AI to the compiler.
+        DCC Help brings the power of Generative AI to the Debugging C Compiler, <br>utilising extra context to produce helpful, contextual explanations.
       </Fragment>
     </Sectionhead>
-
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16"></div>
+    <DCCHelp />
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-4"></div>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12 mb-12">
       <div class="mb-4">
@@ -51,6 +51,5 @@ import DCCHelp from "@components/dcchelp.astro";
         </p>
       </div>
     </div>
-    <!-- <DCCHelp /> -->
   </Container>
 </Layout>

@@ -1,5 +1,5 @@
-<div class="max-w-5xl mx-auto">
-    <terminal-window style="background-color: rgb(14, 17, 19)">
+<div class="max-w-5xl mx-auto min-h-20">
+  <terminal-window style="background-color: rgb(14, 17, 19)">
     <terminal-line data="input">dcc program.c -o program</terminal-line>
 
     <terminal-line data="input">./program</terminal-line>
@@ -8,58 +8,47 @@
         >index 5 out of bounds for type 'int [5]'</span
       >
     </terminal-line>
-
-    <terminal-line lineDelay="0">
-      dcc explanation: You are using an illegal array index: <span
-        style="color: #be3737">5</span
-      >
-    </terminal-line>
-    <terminal-line lineDelay="0"
-      >&emsp; Valid indices for an array of size <span style="color: #be3737"
-        >5</span
-      > are <span style="color: #be3737">0</span>..<span style="color: #be3737"
-        >4</span
-      ></terminal-line
-    >
-    <terminal-line lineDelay="0"
-      >&emsp; Make sure the size of your array is correct.</terminal-line
-    >
-    <terminal-line lineDelay="0"
-      >&emsp; Make sure your array indices are correct.</terminal-line
-    >
-    <terminal-line lineDelay="0"></terminal-line>
-    <terminal-line lineDelay="0">
-      Execution stopped in main() in <span style="color: #be3737"
-        >program.c</span
-      > at <span style="color: #be3737">line 11</span>:</terminal-line
-    >
-    <terminal-line lineDelay="0"></terminal-line>
-
-    <terminal-line lineDelay="0">&emsp; int i = 0;</terminal-line>
-    <terminal-line lineDelay="0">&emsp; while(i &lt; 5) &#123;</terminal-line>
-    <terminal-line lineDelay="0"
-      >&emsp; &emsp; printf(&quot;%d\n&quot;, data[i]);</terminal-line
-    >
-    <terminal-line lineDelay="0">&emsp; &emsp; i++;</terminal-line>
-    <terminal-line lineDelay="0">&emsp; &#125;</terminal-line>
-    <terminal-line lineDelay="0">
-      <span style="color: #be3737">
-        --&gt; printf(&quot;Final value was: %d\n&quot;, data[i]);</span
-      ></terminal-line
-    >
-    <terminal-line lineDelay="0">&#125;</terminal-line>
-    <terminal-line lineDelay="0"></terminal-line>
-    <terminal-line lineDelay="0">Values when execution stopped:</terminal-line>
-    <terminal-line lineDelay="0"></terminal-line>
-    <terminal-line lineDelay="0">data = &#123;1, 2, 3, 4, 5&#125;</terminal-line
-    >
-    <terminal-line lineDelay="0">i = 5</terminal-line>
-    <terminal-line lineDelay="0"
-      >data[i] = <span style="color: #be3737">&lt;uninitialized value&gt;</span
-      ></terminal-line
-    >
     <terminal-line lineDelay="0"
       >Don't understand? Get AI-generated help by running: dcc-help</terminal-line
     >
+
+    <terminal-line data="input" lineDelay="5">dcc-help</terminal-line>
+    <terminal-line lineDelay="20"
+      >Here is an AI generated explanation. Be careful - it may be wrong!</terminal-line
+    >
+    <terminal-line lineDelay=""></terminal-line>
+    <terminal-line lineDelay=""
+      >The error you are seeing is a runtime error. It occurs when you are
+      trying to access an element of an array that is outside of its valid
+      range. In this case, the array <span style="color: #be3737">data</span>
+      has a size of 5, which means its valid indices are from 0 to 4.</terminal-line
+    >
+
+    <terminal-line lineDelay="20"></terminal-line>
+
+    <terminal-line>
+      In your code, you are using a while loop to iterate over the elements of
+      the <span style="color: #be3737">data</span> array. You correctly use a
+      condition i is less than 5 to ensure that the loop only runs while i is
+      less than 5. However, you forgot to consider the fact that array indices
+      start from 0. So, when i becomes 5 in the loop, it is actually trying to
+      access the element at index 5, which is out of bounds.
+    </terminal-line>
+
+    <terminal-line
+      >The runtime error occurs when you try to print the "Final value" using
+      <span style="color: #be3737">data[i]</span> after the while loop. At this
+      point, i is 5, so it is trying to access <span style="color: #be3737"
+        >data[5]</span
+      >, which does not exist and leads to undefined behavior.</terminal-line
+    ><terminal-line></terminal-line>
+
+    <terminal-line
+      >To fix this error, you should change the condition in the while loop to i
+      less than 5 (to account for the valid indices of the array) and move the
+      line <span style="color: #be3737">printf("Final value was: %d\n", data[i]);</span> inside the while loop,
+      after i++. This way, it will print the final value of <span style="color: #be3737">data[i]</span> while <span style="color: #be3737">i</span> is
+      still valid.
+    </terminal-line>
   </terminal-window>
 </div>
