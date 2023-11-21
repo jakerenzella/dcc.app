@@ -2,7 +2,7 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import '@fontsource-variable/inter';
+import "@fontsource-variable/inter";
 import openGraph from "assets/opengraph.png";
 
 export interface Props {
@@ -13,7 +13,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
-  Astro.site
+  Astro.site,
 ).toString();
 
 const { title } = Astro.props;
@@ -23,8 +23,24 @@ const makeTitle = title
   : "DCC - A novice-focused C compiler";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VSZW2PC5RB"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VSZW2PC5RB");
+    </script>
+  </head>
   <script
     src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js"
     defer></script>
