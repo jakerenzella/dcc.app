@@ -8,16 +8,21 @@ import Sectionhead from "@components/sectionhead.astro";
 const publishedPapers = await getCollection("papers", ({ data }) => {
   return !data.draft;
 });
+
+const grants = await getCollection("grants", ({ data }) => {
+  return data;
+});
 ---
 
 <Layout title="Papers">
   <Container>
     <Sectionhead>
-      
-      <Fragment slot="title">{publishedPapers.length == 1 ? 'Paper' : 'Papers'} </Fragment>
+      <Fragment slot="title">
+        {publishedPapers.length == 1 ? "Paper" : "Papers"}
+      </Fragment>
       <Fragment slot="desc">
         If you have used DCC in your teaching or research, please cite the
-        {publishedPapers.length === 1 ? 'paper' : 'papers'}:
+        {publishedPapers.length === 1 ? "paper" : "papers"}:
       </Fragment>
     </Sectionhead>
 

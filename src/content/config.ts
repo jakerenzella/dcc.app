@@ -14,8 +14,20 @@ const papersCollection = defineCollection({
   }),
 });
 
+const grantsCollection = defineCollection({
+  schema: z.object({
+    recipients: z.array(z.string()),
+    title: z.string(),
+    awarder: z.string(),
+    year: z.string(),
+    abstract: z.string(),
+    amount: z.string(),
+  }),
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
+  'grants': grantsCollection,
   'papers': papersCollection,
 };

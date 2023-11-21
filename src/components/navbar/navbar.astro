@@ -13,7 +13,6 @@ const publishedPapers = await getCollection("papers", ({ data }) => {
 const paperTitle = publishedPapers.length === 1 ? "Paper" : "Papers";
 
 const menuitems = [
-
   {
     title: "DCC Help",
     path: "/dcc-help",
@@ -26,6 +25,10 @@ const menuitems = [
   {
     title: paperTitle,
     path: "/papers",
+  },
+  {
+    title: "Grants",
+    path: "/grants",
   },
   {
     title: "About",

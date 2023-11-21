@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const grants = await getCollection("grants", ({ data }) => {
+  return data;
+});
+---
+
+<Layout title="Grants">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">
+        {grants.length == 1 ? "Grant" : "Grants"}
+      </Fragment>
+      <Fragment slot="desc">
+        We thank all our supporters for their generous contributions.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12">
+      {
+        grants.map((grant) => (
+          <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-6">
+              {grant.data.title}
+            </h5>
+            <div class="flex">
+              <span class="text-sm text-gray-500 dark:text-gray-400">
+                {grant.data.awarder}
+              </span>
+              <span class="grow" />
+              <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
+                {grant.data.amount}
+              </span>
+            </div>
+            <p class="my-1 line-clamp-6 font-normal text-gray-700 dark:text-gray-400">
+              {grant.data.abstract}
+            </p>
+            <span class="flex w-full items-end mt-4">
+              <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-0">
+                2023
+              </span>
+
+              <span class="grow" />
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</Layout>
