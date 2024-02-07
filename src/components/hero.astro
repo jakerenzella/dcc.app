@@ -1,6 +1,7 @@
 ---
 import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon";
+// @ts-ignore
+import { Icon } from 'astro-icon/components';
 ---
 
 <main class="flex justify-center items-center pt-16 pb-8 md:pt-12 md:pb-24">
@@ -21,7 +22,7 @@ import { Icon } from "astro-icon";
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
+        <Icon class="text-white w-5 h-5" name="bx:cloud-download" />
 
         Install
       </Link>
