@@ -3,8 +3,8 @@ draft: false
 authors: ["Lorenzo Lee Solano",  "Jake Renzella", "Alexandra Vassar"]
 title: "DCC Sidekick: Helping Novices Solve Programming Errors Through a Conversational Explanation Interface"
 year: "2024"
-url: ""
-doi: ""
+url: "https://dl.acm.org/doi/10.1145/3626253.3635483"
+doi: "https://doi.org/10.1145/3626253.3635483"
 abstract: "Students in introductory computing courses often lack the experi-
 ence and knowledge to help them effectively identify and resolve
 errors in their code. Programming Error Messages (PEMs) can be a
@@ -26,5 +26,5 @@ Sidekick to a C-based CS1 cohort at a large higher education insti-
 tution to investigate how novice students utilise the conversational
 explanation interface during debugging activities. In this work, we
 present our experience designing and building DCC Sidekick."
-booktitle: "To appear in SIGCSE 2024"
+booktitle: "SIGCSE 2024"
 ---
