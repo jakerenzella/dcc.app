@@ -11,7 +11,7 @@ import node from "@astrojs/node";
 export default defineConfig({
   site: "https://dcc.cse.unsw.edu.au",
   integrations: [tailwind(), mdx(), sitemap(), react(), icon()],
-  output: "server",
+  output: "hybrid",
   adapter: node({
     mode: "standalone",
   }),

@@ -1,54 +1,73 @@
-<div class="max-w-5xl mx-auto min-h-20">
-  <terminal-window style="background-color: rgb(14, 17, 19)">
-    <terminal-line data="input">dcc program.c -o program</terminal-line>
+<div class="animated-terminal-wrapper">
+  <div class="animated-terminal-content" style="opacity: 0;">
+    <div class="max-w-5xl mx-auto min-h-20">
+      <terminal-window style="background-color: rgb(14, 17, 19)">
+        <terminal-line data="input">dcc program.c -o program</terminal-line>
 
-    <terminal-line data="input">./program</terminal-line>
-    <terminal-line>
-      program.c:11:37 runtime error - <span style="color: #be3737"
-        >index 5 out of bounds for type 'int [5]'</span
-      >
-    </terminal-line>
-    <terminal-line lineDelay="0"
-      >Don't understand? Get AI-generated help by running: dcc-help</terminal-line
-    >
+        <terminal-line data="input">./program</terminal-line>
+        <terminal-line>
+          program.c:11:37 runtime error - <span style="color: #be3737"
+            >index 5 out of bounds for type 'int [5]'</span
+          >
+        </terminal-line>
+        <terminal-line lineDelay="0"
+          >Don't understand? Get AI-generated help by running: dcc-help</terminal-line
+        >
 
-    <terminal-line data="input" lineDelay="5">dcc-help</terminal-line>
-    <terminal-line lineDelay="20"
-      >Here is an AI generated explanation. Be careful - it may be wrong!</terminal-line
-    >
-    <terminal-line lineDelay=""></terminal-line>
-    <terminal-line lineDelay=""
-      >The error you are seeing is a runtime error. It occurs when you are
-      trying to access an element of an array that is outside of its valid
-      range. In this case, the array <span style="color: #be3737">data</span>
-      has a size of 5, which means its valid indices are from 0 to 4.</terminal-line
-    >
+        <terminal-line data="input" lineDelay="5">dcc-help</terminal-line>
+        <terminal-line lineDelay="20"
+          >Here is an AI generated explanation. Be careful - it may be wrong!</terminal-line
+        >
+        <terminal-line lineDelay=""></terminal-line>
+        <terminal-line lineDelay=""
+          >The error you are seeing is a runtime error. It occurs when you are
+          trying to access an element of an array that is outside of its valid
+          range. In this case, the array <span style="color: #be3737">data</span
+          >
+          has a size of 5, which means its valid indices are from 0 to 4.</terminal-line
+        >
 
-    <terminal-line lineDelay="20"></terminal-line>
+        <terminal-line lineDelay="20"></terminal-line>
 
-    <terminal-line>
-      In your code, you are using a while loop to iterate over the elements of
-      the <span style="color: #be3737">data</span> array. You correctly use a
-      condition i is less than 5 to ensure that the loop only runs while i is
-      less than 5. However, you forgot to consider the fact that array indices
-      start from 0. So, when i becomes 5 in the loop, it is actually trying to
-      access the element at index 5, which is out of bounds.
-    </terminal-line>
+        <terminal-line>
+          In your code, you are using a while loop to iterate over the elements
+          of the <span style="color: #be3737">data</span> array. You correctly use
+          a condition i is less than 5 to ensure that the loop only runs while i
+          is less than 5. However, you forgot to consider the fact that array indices
+          start from 0. So, when i becomes 5 in the loop, it is actually trying to
+          access the element at index 5, which is out of bounds.
+        </terminal-line>
 
-    <terminal-line
-      >The runtime error occurs when you try to print the "Final value" using
-      <span style="color: #be3737">data[i]</span> after the while loop. At this
-      point, i is 5, so it is trying to access <span style="color: #be3737"
-        >data[5]</span
-      >, which does not exist and leads to undefined behavior.</terminal-line
-    ><terminal-line></terminal-line>
+        <terminal-line
+          >The runtime error occurs when you try to print the "Final value"
+          using
+          <span style="color: #be3737">data[i]</span> after the while loop. At this
+          point, i is 5, so it is trying to access <span style="color: #be3737"
+            >data[5]</span
+          >, which does not exist and leads to undefined behavior.</terminal-line
+        ><terminal-line></terminal-line>
 
-    <terminal-line
-      >To fix this error, you should change the condition in the while loop to i
-      less than 5 (to account for the valid indices of the array) and move the
-      line <span style="color: #be3737">printf("Final value was: %d\n", data[i]);</span> inside the while loop,
-      after i++. This way, it will print the final value of <span style="color: #be3737">data[i]</span> while <span style="color: #be3737">i</span> is
-      still valid.
-    </terminal-line>
-  </terminal-window>
+        <terminal-line
+          >To fix this error, you should change the condition in the while loop
+          to i less than 5 (to account for the valid indices of the array) and
+          move the line <span style="color: #be3737"
+            >printf("Final value was: %d\n", data[i]);</span
+          > inside the while loop, after i++. This way, it will print the final value
+          of <span style="color: #be3737">data[i]</span> while <span
+            style="color: #be3737">i</span
+          > is still valid.
+        </terminal-line>
+      </terminal-window>
+    </div>
+  </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const content = document.querySelector(".animated-terminal-content");
+    if (content) {
+      content.style.opacity = "1";
+      content.style.transition = "opacity 0.3s ease-in-out";
+    }
+  });
+</script>

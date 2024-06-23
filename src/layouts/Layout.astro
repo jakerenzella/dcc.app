@@ -13,7 +13,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
-  Astro.site,
+  Astro.site
 ).toString();
 
 const { title } = Astro.props;
@@ -27,9 +27,8 @@ const makeTitle = title
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-VSZW2PC5RB"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSZW2PC5RB"
+    ></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -40,10 +39,7 @@ const makeTitle = title
       gtag("config", "G-VSZW2PC5RB");
     </script>
   </head>
-  <script
-    src="https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal/animated-terminal.min.js"
-    defer></script>
-
+  <script src="../components/animated-terminal.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
