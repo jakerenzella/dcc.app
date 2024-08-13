@@ -26,5 +26,5 @@ Sidekick to a C-based CS1 cohort at a large higher education insti-
 tution to investigate how novice students utilise the conversational
 explanation interface during debugging activities. In this work, we
 present our experience designing and building DCC Sidekick."
-booktitle: "SIGCSE 2024"
+booktitle: "Proceedings of the 55th ACM Technical Symposium on Computer Science Education"
 ---
