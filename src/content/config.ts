@@ -16,6 +16,7 @@ const papersCollection = defineCollection({
 
 const grantsCollection = defineCollection({
   schema: z.object({
+    type: z.string(),
     recipients: z.array(z.string()),
     title: z.string(),
     awarder: z.string(),

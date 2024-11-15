@@ -1,4 +1,5 @@
 ---
+type: "paper"
 recipients: ["Jake Renzella", "Alexandra Vassar", "Andrew Taylor"]
 title: "Google Award for inclusion research program"
 year: "2023"

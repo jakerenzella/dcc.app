@@ -3,20 +3,20 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import { Icon } from "astro-icon/components";
 
 const grants = await getCollection("grants", ({ data }) => {
   return data;
 });
 ---
 
-<Layout title="Grants">
+<Layout title="Grants and Awards">
   <Container>
     <Sectionhead>
       <Fragment slot="title">
-        {grants.length == 1 ? "Grant" : "Grants"}
+        {"Grants and Awards"}
       </Fragment>
       <Fragment slot="desc">
-        We thank all our supporters for their generous contributions.
       </Fragment>
     </Sectionhead>
 
@@ -32,9 +32,17 @@ const grants = await getCollection("grants", ({ data }) => {
                 {grant.data.awarder}
               </span>
               <span class="grow" />
-              <span class="ml-3 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-200 dark:text-blue-800">
-                {grant.data.amount}
-              </span>
+
+              {grant.data.type == "award" ? (
+                <span class="ml-3 mr-2 rounded inline-flex items-center bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800 dark:bg-green-200 dark:text-green-800">
+                  <Icon class="text-green-800 w-4 h-4 mr-2" name="bx:trophy" />
+                  AWARD
+                </span>
+              ) : (
+                <span class="ml-3 mr-2 rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+                  {grant.data.amount}
+                </span>
+              )}
             </div>
             <p class="my-1 line-clamp-6 font-normal text-gray-700 dark:text-gray-400">
               {grant.data.abstract}

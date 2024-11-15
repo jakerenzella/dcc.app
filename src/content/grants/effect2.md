@@ -1,4 +1,5 @@
 ---
+type: "paper"
 recipients: ["Jake Renzella", "Alexandra Vassar", "Andrew Taylor"]
 title: "UNSW Faculty of Engineering EFFECT Grant"
 year: "2024"
