@@ -2,6 +2,7 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
+import Banner from "@components/banner.astro";
 import "@fontsource-variable/inter";
 import openGraph from "assets/opengraph.png";
 
@@ -69,6 +70,7 @@ const makeTitle = title
   />
 
   <body>
+    <Banner />
     <Navbar />
     <slot />
     <Footer />
