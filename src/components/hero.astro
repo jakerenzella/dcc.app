@@ -1,7 +1,8 @@
 ---
 import Link from "@components/ui/link.astro";
 // @ts-ignore
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
+import Counter from "./ui/counter.astro";
 ---
 
 <main class="flex justify-center items-center pt-16 pb-8 md:pt-12 md:pb-24">
@@ -16,6 +17,7 @@ import { Icon } from 'astro-icon/components';
       additional compile-time and run-time checks such as memory leak detection,
       and much more.
     </p>
+
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="https://github.com/COMP1511UNSW/dcc#installation"
@@ -39,3 +41,4 @@ import { Icon } from 'astro-icon/components';
     </div>
   </div>
 </main>
+<Counter value={2000} />

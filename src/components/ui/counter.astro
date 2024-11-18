@@ -1,0 +1,129 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  size?: "md" | "lg";
+  block?: boolean;
+  value: number;
+  class?: string;
+  [x: string]: any;
+}
+
+const {
+  size = "md",
+  block,
+  value = 10000,
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<section
+  class="grid gap-8 mb-16 mx-24 md:grid-cols-3 md:gap-16 place-items-center">
+  <!-- Block #1 -->
+
+  <article>
+    <div
+      class="w-14 h-14 rounded shadow-md bg-white flex justify-center items-center rotate-3 mb-6">
+      <Icon class="text-black w-12 h-12" name="bx:code-alt" />
+    </div>
+    <h2>
+      <span
+        id="target"
+        class="flex text-slate-900 text-4xl font-extrabold mb-2">
+        0
+      </span>
+      <span
+        class="inline-flex font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-400 mb-2"
+        >Compilations</span
+      >
+    </h2>
+  </article>
+
+  <article>
+    <div
+      class="w-14 h-14 rounded shadow-md bg-white flex justify-center items-center -rotate-3 mb-6">
+      <Icon class="text-black w-12 h-12" name="bx:brain" />
+    </div>
+    <h2>
+      <span
+        id="totalHelpTarget"
+        class="flex text-slate-900 text-4xl font-extrabold mb-2">
+        0
+      </span>
+      <span
+        class="inline-flex font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-400 mb-2"
+        >AI Error explanations</span
+      >
+    </h2>
+  </article>
+
+  <article>
+    <div
+      class="w-14 h-14 rounded shadow-md bg-white flex justify-center items-center rotate-3 mb-6">
+      <Icon class="text-black w-12 h-12" name="bx:user" />
+    </div>
+    <h2>
+      <span
+        id="usersTotal"
+        class="flex text-slate-900 text-4xl font-extrabold mb-2">
+        0
+      </span>
+      <span
+        class="inline-flex font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-400 mb-2"
+        >Unique users</span
+      >
+    </h2>
+  </article>
+</section>
+
+<script>
+  const fetchSummary = async () => {
+    try {
+      // Fetch the response from the URL
+      const response = await fetch(
+        "https://cgi.cse.unsw.edu.au/~apps/dcc/cgi/summary.cgi"
+      );
+
+      // Ensure the response is okay
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the response as JSON
+      const data = await response.json();
+
+      // Extract the desired property
+      const helpTotal = data["dcc-help"]?.all?.total;
+      const dccTotal = data["dcc"]?.all?.total;
+      return { help: helpTotal, dcc: dccTotal };
+    } catch (error) {
+      console.error("Error fetching summary:", error);
+    }
+  };
+
+  fetchSummary()
+    .then((total) => {
+      try {
+        // check that data["dcc-help"] exists
+        if (total === undefined) {
+          throw new Error("Failed to find 'dcc-help' in response");
+        }
+      } catch (parsingError) {
+        throw new Error("Failed to parse response as JSON");
+      }
+
+      new CountUp("target", total?.dcc.executions).start();
+      new CountUp("totalHelpTarget", total?.help.executions).start();
+      new CountUp("usersTotal", total?.dcc.unique_users).start();
+    })
+    .catch((error) => {
+      console.error("Error fetching summary:", error);
+      // return default value object
+      new CountUp("target", 14464356).start();
+      new CountUp("totalHelpTarget", 285214).start();
+      new CountUp("usersTotal", 10056).start();
+    });
+
+  import { CountUp } from "countUp.js";
+</script>
