@@ -4,7 +4,6 @@ import { Icon } from "astro-icon/components";
 interface Props {
   size?: "md" | "lg";
   block?: boolean;
-  value: number;
   class?: string;
   [x: string]: any;
 }
@@ -12,7 +11,6 @@ interface Props {
 const {
   size = "md",
   block,
-  value = 10000,
   class: className,
   ...rest
 } = Astro.props;
