@@ -8,12 +8,7 @@ interface Props {
   [x: string]: any;
 }
 
-const {
-  size = "md",
-  block,
-  class: className,
-  ...rest
-} = Astro.props;
+const { size = "md", block, class: className, ...rest } = Astro.props;
 ---
 
 <section
@@ -91,10 +86,14 @@ const {
       // Parse the response as JSON
       const data = await response.json();
 
+      const totalHelp = {
+        executions: data["dcc-help"]?.all?.total?.executions + data["autotest-help"]?.all?.total?.executions,
+        unique_users: data["dcc-help"]?.all?.total?.unique_users + data["autotest-help"]?.all?.total?.unique_users
+      }
+
       // Extract the desired property
-      const helpTotal = data["dcc-help"]?.all?.total;
       const dccTotal = data["dcc"]?.all?.total;
-      return { help: helpTotal, dcc: dccTotal };
+      return { help: totalHelp, dcc: dccTotal };
     } catch (error) {
       console.error("Error fetching summary:", error);
     }
@@ -118,9 +117,9 @@ const {
     .catch((error) => {
       console.error("Error fetching summary:", error);
       // return default value object
-      new CountUp("target", 14464356).start();
-      new CountUp("totalHelpTarget", 285214).start();
-      new CountUp("usersTotal", 10056).start();
+      new CountUp("target", 14779683).start();
+      new CountUp("totalHelpTarget", 493201).start();
+      new CountUp("usersTotal", 10063).start();
     });
 
   import { CountUp } from "countup.js";
