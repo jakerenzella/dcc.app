@@ -1,10 +1,12 @@
 ---
 import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
-import Banner from "@components/banner.astro";
-import "@fontsource-variable/inter";
-import openGraph from "assets/opengraph.png";
+import Footer from "@/components/footer.astro";
+import Navbar from "@/components/navbar/navbar.astro";
+import Banner from "@/components/banner.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
+import "../styles/global.css";
+import openGraph from "@/assets/opengraph.png";
 
 export interface Props {
   title: string;

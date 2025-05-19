@@ -7,7 +7,7 @@ const papersCollection = defineCollection({
     authors: z.array(z.string()),
     title: z.string(),
     booktitle: z.string(),
-    year: z.string(),
+    date: z.date(),
     url: z.string(),
     doi: z.string(),
     abstract: z.string(),
@@ -20,9 +20,9 @@ const grantsCollection = defineCollection({
     recipients: z.array(z.string()),
     title: z.string(),
     awarder: z.string(),
-    year: z.string(),
+    date: z.date(),
     abstract: z.string(),
-    amount: z.string(),
+    amount: z.number().optional(),
   }),
 });
 

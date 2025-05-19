@@ -1,16 +1,12 @@
 ---
+import Container from "@/components/container.astro";
+import Sectionhead from "@/components/sectionhead.astro";
+import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedPapers = await getCollection("papers", ({ data }) => {
   return !data.draft;
-});
-
-const grants = await getCollection("grants", ({ data }) => {
-  return data;
 });
 ---
 
@@ -28,48 +24,52 @@ const grants = await getCollection("grants", ({ data }) => {
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-12">
       {
-        publishedPapers.map((paperEntry) => (
-          <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href={paperEntry.data.url} target="_blank">
-              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-6">
-                {paperEntry.data.title}
-              </h5>
-            </a>
-            <span class="text-sm text-gray-500 dark:text-gray-400">
-              {paperEntry.data.booktitle}
-            </span>
-            <p class="my-1 line-clamp-6 font-normal text-gray-700 dark:text-gray-400">
-              {paperEntry.data.abstract}
-            </p>
-            <span class="flex w-full items-end mt-4">
-              <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
-                {paperEntry.data.year}
-              </span>
-
-              <span class="grow" />
-              <a
-                href={paperEntry.data.url}
-                target="_blank"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
-                <svg
-                  class="w-3.5 h-3.5 ml-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10">
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
+        publishedPapers
+          .sort((a, b) => {
+            return b.data.date.getTime() - a.data.date.getTime();
+          })
+          .map((paperEntry) => (
+            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <a href={paperEntry.data.url} target="_blank">
+                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-6">
+                  {paperEntry.data.title}
+                </h5>
               </a>
-            </span>
-          </div>
-        ))
+              <span class="text-sm text-gray-500 dark:text-gray-400">
+                {paperEntry.data.booktitle}
+              </span>
+              <p class="my-1 line-clamp-6 font-normal text-gray-700 dark:text-gray-400">
+                {paperEntry.data.abstract}
+              </p>
+              <span class="flex w-full items-end mt-4">
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
+                  {paperEntry.data.date.getFullYear()}
+                </span>
+
+                <span class="grow" />
+                <a
+                  href={paperEntry.data.url}
+                  target="_blank"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Read more
+                  <svg
+                    class="w-3.5 h-3.5 ml-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10">
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </span>
+            </div>
+          ))
       }
     </div>
   </Container>

@@ -2,7 +2,7 @@
 draft: false
 authors: ["Lorenzo Lee Solano",  "Jake Renzella", "Alexandra Vassar"]
 title: "DCC Sidekick: Helping Novices Solve Programming Errors Through a Conversational Explanation Interface"
-year: "2024"
+date: 2024-01-01
 url: "https://dl.acm.org/doi/10.1145/3626253.3635483"
 doi: "https://doi.org/10.1145/3626253.3635483"
 abstract: "Students in introductory computing courses often lack the experi-
